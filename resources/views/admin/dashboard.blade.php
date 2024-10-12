@@ -23,7 +23,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>{{ number_format($user->wallet->balanceFloat, 2)}}</h3>
+                            <h3>{{ number_format($user->wallet->balanceFloat, 2) }}</h3>
                             <p>Balance</p>
                         </div>
                         <div class="icon">
@@ -38,7 +38,7 @@
                     <div class="small-box bg-success">
                         <div class="inner">
                             <h3>1000</h3>
-                            @if($role['0'] == 'Admin')
+                            @if ($role['0'] == 'Admin')
                                 <p>Agent Total Balance</p>
                             @else
                                 <p>Player Total Balance</p>
@@ -47,28 +47,30 @@
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        @if($role['0'] == 'Admin')
-                            <a href="{{route('admin.master.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        @else
-                            <a href="{{route('admin.player.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        @if ($role['0'] == 'Admin')
+                            {{-- <a href="{{route('admin.master.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        @else --}}
+                            <a href="{{ route('admin.player.index') }}" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         @endif
                     </div>
                 </div>
                 <!-- ./col -->
-                @if($role[0] == 'Agent')
+                @if ($role[0] == 'Agent')
                 @else
                     <div class="col-lg-4 col-6">
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>{{$agent_count}}</h3>
+                                <h3>{{ $agent_count }}</h3>
 
                                 <p>Agent Count</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
                             </div>
-                            <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 @endif
@@ -77,7 +79,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>{{$player_count}}</h3>
+                            <h3>{{ $player_count }}</h3>
 
                             <p>Player Count</p>
                         </div>
